@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+.pt-0 {
+    padding-top: 0;
+}
+
 .vm {
     vertical-align: middle;
 }
