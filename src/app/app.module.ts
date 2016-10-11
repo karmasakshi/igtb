@@ -15,28 +15,49 @@ import { SummarySpendingsComponent } from './summary-spendings/summary-spendings
 import { SummaryIncomesComponent } from './summary-incomes/summary-incomes.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    LoginComponent,
-    NavComponent,
-    SummaryComponent,
-    SummaryDefaultComponent,
-    SummaryAccountsComponent,
-    SummarySpendingsComponent,
-    SummaryIncomesComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot([
-      { path: '', component: DashboardComponent },
-      { path: 'login', component: LoginComponent },
-      { path: '**', redirectTo: '/', pathMatch: 'full' }
-    ])
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        DashboardComponent,
+        LoginComponent,
+        NavComponent,
+        SummaryComponent,
+        SummaryDefaultComponent,
+        SummaryAccountsComponent,
+        SummarySpendingsComponent,
+        SummaryIncomesComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        RouterModule.forRoot([
+            {
+                path: 'dashboard',
+                component: DashboardComponent,
+                children: [
+                    {
+                        path: '',
+                        component: SummaryDefaultComponent
+                    },
+                    {
+                        path: 'accounts',
+                        component: SummaryAccountsComponent
+                    },
+                    {
+                        path: 'incomes',
+                        component: SummaryIncomesComponent
+                    },
+                    {
+                        path: 'spendings',
+                        component: SummarySpendingsComponent
+                    }
+                ]
+            },
+            { path: 'login', component: LoginComponent },
+            { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
+        ])
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
