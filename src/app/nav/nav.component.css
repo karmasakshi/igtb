@@ -1,0 +1,12 @@
+.badge::after {
+    margin-left: -10px;
+}
+
+.nav {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.nav-icon {
+    cursor: pointer;
+    vertical-align: middle;
+}
