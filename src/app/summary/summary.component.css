@@ -6,3 +6,7 @@
     border: 1px solid;
     padding: 1rem;
 }
+
+.summary-card.active {
+    color: white !important;
+}
