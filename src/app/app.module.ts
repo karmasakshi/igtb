@@ -14,6 +14,8 @@ import { SummaryAccountsComponent } from './summary-accounts/summary-accounts.co
 import { SummarySpendingsComponent } from './summary-spendings/summary-spendings.component';
 import { SummaryIncomesComponent } from './summary-incomes/summary-incomes.component';
 import { SummaryCardComponent } from './summary-card/summary-card.component';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationCardComponent } from './notification-card/notification-card.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,9 @@ import { SummaryCardComponent } from './summary-card/summary-card.component';
         SummaryAccountsComponent,
         SummarySpendingsComponent,
         SummaryIncomesComponent,
-        SummaryCardComponent
+        SummaryCardComponent,
+        NotificationComponent,
+        NotificationCardComponent
     ],
     imports: [
         BrowserModule,
