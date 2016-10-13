@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-summary',
@@ -7,10 +8,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
-    constructor() { }
+    activeSummaryView: string;
+
+    router: Router;
+
+    constructor(private _router: Router) {
+
+        this.router = _router;
+
+    }
 
     ngOnInit() {
+
+        const urlArray = this.router.url.split('/');
+
+        this.activeSummaryView = urlArray[urlArray.length - 1];
+
     }
+
+    loadOrResetSummaryView(path: string) {
+
+        if (this.activeSummaryView === path) {
+
+            this.activeSummaryView = '';
+
+            this.router.navigate(['dashboard']);
+
+        } else {
+
+            this.activeSummaryView = path;
+
+            this.router.navigate(['dashboard', path]);
+
+        }
+
+    };
 
     summary = {
         accounts: {

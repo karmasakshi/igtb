@@ -20,8 +20,9 @@
                 [clickable]="'true'"
                 [colorCode]="'#409fe3'"
                 [icon]="'account_balance'"
+                [isActive]="activeSummaryView === 'accounts'"
                 [title]="'Accounts'"
-                routerLink="/dashboard/accounts">
+                (click)="loadOrResetSummaryView('accounts')">
 			</app-summary-card>
 		</div>
 
@@ -33,8 +34,9 @@
                 [clickable]="'true'"
                 [colorCode]="'#489d51'"
                 [icon]="'call_received'"
+                [isActive]="activeSummaryView === 'incomes'"
                 [title]="'Incomes'"
-                routerLink="/dashboard/incomes">
+                (click)="loadOrResetSummaryView('incomes')">
 			</app-summary-card>
 		</div>
 
@@ -46,8 +48,9 @@
                 [clickable]="'true'"
                 [colorCode]="'#d64341'"
                 [icon]="'call_made'"
+                [isActive]="activeSummaryView === 'spendings'"
                 [title]="'Spendings'"
-                routerLink="/dashboard/spendings">
+                (click)="loadOrResetSummaryView('spendings')">
 			</app-summary-card>
 		</div>
 

@@ -12,6 +12,7 @@ export class SummaryCardComponent implements OnInit {
     @Input() clickable: string;
     @Input() colorCode: string;
     @Input() icon: string;
+    @Input() isActive: boolean = false;
     @Input() title: string;
 
     constructor() { }
