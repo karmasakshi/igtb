@@ -1,3 +1,7 @@
+.bb {
+    border-bottom: 1px solid #f1f1f1;
+}
+
 .clickable {
     cursor: pointer;
 }
