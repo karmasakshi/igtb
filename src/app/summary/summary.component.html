@@ -12,84 +12,55 @@
 <div class="container" style="border-bottom: 1px solid #f1f1f1;">
 	<div class="columns">
 
-		<!-- All Accounts -->
-		<div class="column col-md-6 pt-0">
-			<div class="clickable summary-card" routerLink="/dashboard/accounts" routerLinkActive="active" style="border-color: #409fe3; color: #409fe3;">
-
-				<div>
-					<span class="lead">All Accounts</span>
-					<i class="float-right material-icons">account_balance</i>
-				</div>
-
-				<div class="text-ellipsis">
-					<span>$</span><small> </small><span class="amount">6,000,000</span><small> </small><span>.00</span>
-				</div>
-
-				<div class="text-ellipsis">
-					<small>Additional <strong>information</strong> goes here.</small>
-				</div>
-
-			</div>
+		<!-- Accounts -->
+        <div class="column col-md-6 pt-0">
+			<app-summary-card
+                [additionalText]="summary.accounts.additionalText"
+                [amount]="summary.accounts.amount"
+                [clickable]="'true'"
+                [colorCode]="'#409fe3'"
+                [icon]="'account_balance'"
+                [title]="'Accounts'"
+                routerLink="/dashboard/accounts">
+			</app-summary-card>
 		</div>
 
-		<!-- Income -->
-		<div class="column col-md-6 pt-0">
-			<div class="clickable summary-card" routerLink="/dashboard/incomes" routerLinkActive="active" style="border-color: #489d51; color: #489d51;">
-
-				<div>
-					<span class="lead">Income</span>
-					<i class="float-right material-icons">call_received</i>
-				</div>
-
-				<div class="text-ellipsis">
-					<span>$</span><small> </small><span class="amount">8,200,000</span><small> </small><span>.00</span>
-				</div>
-
-				<div class="text-ellipsis">
-					<small>Additional <strong>information</strong> goes here.</small>
-				</div>
-
-			</div>
+		<!-- Incomes -->
+        <div class="column col-md-6 pt-0">
+			<app-summary-card
+                [additionalText]="summary.incomes.additionalText"
+                [amount]="summary.incomes.amount"
+                [clickable]="'true'"
+                [colorCode]="'#489d51'"
+                [icon]="'call_received'"
+                [title]="'Incomes'"
+                routerLink="/dashboard/incomes">
+			</app-summary-card>
 		</div>
 
-		<!-- Spending -->
+		<!-- Spendings -->
 		<div class="column col-md-6 pt-0">
-			<div class="clickable summary-card" routerLink="/dashboard/spendings" routerLinkActive="active" style="border-color: #d64341; color: #d64341;">
-
-				<div>
-					<span class="lead">Spending</span>
-					<i class="float-right material-icons">call_made</i>
-				</div>
-
-				<div class="text-ellipsis">
-					<span>$</span><small> </small><span class="amount">4,000,000</span><small> </small><span>.00</span>
-				</div>
-
-				<div class="text-ellipsis">
-					<small>Additional <strong>information</strong> goes here.</small>
-				</div>
-
-			</div>
+			<app-summary-card
+                [additionalText]="summary.spendings.additionalText"
+                [amount]="summary.spendings.amount"
+                [clickable]="'true'"
+                [colorCode]="'#d64341'"
+                [icon]="'call_made'"
+                [title]="'Spendings'"
+                routerLink="/dashboard/spendings">
+			</app-summary-card>
 		</div>
 
 		<!-- Cashflow -->
 		<div class="column col-md-6 pt-0">
-			<div class="summary-card" style="border-color: black; color: black;">
-
-				<div>
-					<span class="lead">Cashflow</span>
-					<i class="float-right material-icons">repeat</i>
-				</div>
-
-				<div class="text-ellipsis">
-					<span>$</span><small> </small><span class="amount">4,200,000</span><small> </small><span>.00</span>
-				</div>
-
-				<div class="text-ellipsis">
-					<small>Additional <strong>information</strong> goes here.</small>
-				</div>
-
-			</div>
+			<app-summary-card
+                [additionalText]="summary.cashflow.additionalText"
+                [amount]="summary.cashflow.amount"
+                [clickable]="'false'"
+                [colorCode]="'#000'"
+                [icon]="'repeat'"
+                [title]="'Cashflow'">
+			</app-summary-card>
 		</div>
 
 	</div>

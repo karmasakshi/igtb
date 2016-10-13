@@ -1,0 +1,16 @@
+<div class="summary-card" [style.border-color]="colorCode" [style.color]="'#fff'" [style.background-color]="colorCode" [ngClass]="{'clickable': clickable === 'true'}">
+
+	<div>
+		<span class="lead">{{title}}</span>
+		<i class="float-right material-icons">{{icon}}</i>
+	</div>
+
+	<div class="text-ellipsis">
+		<span>{{amount.currencySymbol}}</span><small> </small><span class="amount">{{amount.figure}}</span><small> </small><span>.{{amount.change}}</span>
+	</div>
+
+	<div class="text-ellipsis">
+		<small>{{additionalText}}</small>
+	</div>
+
+</div>

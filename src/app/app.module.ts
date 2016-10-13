@@ -13,6 +13,7 @@ import { SummaryDefaultComponent } from './summary-default/summary-default.compo
 import { SummaryAccountsComponent } from './summary-accounts/summary-accounts.component';
 import { SummarySpendingsComponent } from './summary-spendings/summary-spendings.component';
 import { SummaryIncomesComponent } from './summary-incomes/summary-incomes.component';
+import { SummaryCardComponent } from './summary-card/summary-card.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { SummaryIncomesComponent } from './summary-incomes/summary-incomes.compo
         SummaryDefaultComponent,
         SummaryAccountsComponent,
         SummarySpendingsComponent,
-        SummaryIncomesComponent
+        SummaryIncomesComponent,
+        SummaryCardComponent
     ],
     imports: [
         BrowserModule,
