@@ -2,20 +2,28 @@
 <header class="container bb">
 	<div class="columns">
 
-		<div class="column col-4 text-center clickable">
+		<div class="column col-4 text-center clickable tooltip tooltip-bottom" data-tooltip="Activity">
 			<i class="material-icons vm">rss_feed</i>
-			<span>Activity</span>
 		</div>
 
-		<div class="column col-4 text-center clickable">
+		<div class="column col-4 text-center clickable tooltip tooltip-bottom" data-tooltip="Today">
 			<i class="material-icons vm">date_range</i>
-			<span>Today</span>
 		</div>
 
-		<div class="column col-4 text-center clickable">
+		<div class="column col-4 text-center clickable tooltip tooltip-bottom" data-tooltip="Filter">
 			<i class="material-icons vm">filter_list</i>
-			<span>Filter</span>
 		</div>
 
 	</div>
 </header>
+
+<!-- Notification Cards -->
+<div class="container">
+	<div class="columns">
+
+		<div class="column col-12 pb-0" *ngFor="let item of [1, 2, 3, 4, 5, 6]">
+			<app-notification-card></app-notification-card>
+		</div>
+
+	</div>
+</div>
