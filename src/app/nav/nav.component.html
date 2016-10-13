@@ -14,20 +14,31 @@
 	<!-- Right -->
 	<div class="column col-8 col-xs-10 text-right">
 
-		<!-- Search -->
-		<i class="material-icons clickable vm">search</i>
+		<section *ngIf="_auth0Service.authenticated()">
 
-		<!-- Cart -->
-		<span class="badge" data-badge="99"><i class="ml-5 material-icons clickable vm">shopping_cart</i></span>
+			<!-- Search -->
+			<i class="material-icons clickable vm">search</i>
 
-		<!-- Mail -->
-		<span class="badge" data-badge="99"><i class="ml-5 material-icons clickable vm">mail_outline</i></span>
+			<!-- Cart -->
+			<span class="badge" data-badge="99"><i class="ml-5 material-icons clickable vm">shopping_cart</i></span>
 
-		<!-- User -->
-		<i class="ml-5 material-icons clickable vm">person</i>
+			<!-- Mail -->
+			<span class="badge" data-badge="99"><i class="ml-5 material-icons clickable vm">mail_outline</i></span>
 
-		<!-- Exit -->
-		<i class="ml-5 material-icons clickable vm">exit_to_app</i>
+			<!-- User -->
+			<i class="ml-5 material-icons clickable vm" (click)="_auth0Service.logout()">person</i>
+
+			<!-- Exit -->
+			<i class="ml-5 material-icons clickable vm">exit_to_app</i>
+
+		</section>
+
+		<section *ngIf="!_auth0Service.authenticated()">
+
+			<!-- User -->
+			<i class="ml-5 material-icons clickable vm" (click)="_auth0Service.login()">person</i>
+
+		</section>
 
 	</div>
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Auth0Service } from '../auth0.service';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _auth0Service: Auth0Service) { }
 
   ngOnInit() {
   }

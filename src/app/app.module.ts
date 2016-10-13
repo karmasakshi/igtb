@@ -4,6 +4,8 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { AUTH_PROVIDERS } from 'angular2-jwt';
+
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
@@ -16,6 +18,9 @@ import { SummaryIncomesComponent } from './summary-incomes/summary-incomes.compo
 import { SummaryCardComponent } from './summary-card/summary-card.component';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationCardComponent } from './notification-card/notification-card.component';
+
+import { Auth0Service } from './auth0.service';
+import { GuardService } from './guard.service';
 
 @NgModule({
     declarations: [
@@ -40,6 +45,7 @@ import { NotificationCardComponent } from './notification-card/notification-card
             {
                 path: 'dashboard',
                 component: DashboardComponent,
+                canActivate: [GuardService],
                 children: [
                     {
                         path: '',
@@ -63,7 +69,7 @@ import { NotificationCardComponent } from './notification-card/notification-card
             { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
         ])
     ],
-    providers: [],
+    providers: [AUTH_PROVIDERS, Auth0Service, GuardService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
