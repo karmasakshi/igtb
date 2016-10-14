@@ -17,7 +17,7 @@ export class Auth0Service {
 
         this.lock.on('authenticated', (authResult) => {
 
-            localStorage.setItem('id_token', authResult.idToken);
+            localStorage.setItem('token', authResult.idToken);
 
         });
 
@@ -37,7 +37,7 @@ export class Auth0Service {
 
     public logout() {
 
-        localStorage.removeItem('id_token');
+        localStorage.removeItem('token');
 
     };
 

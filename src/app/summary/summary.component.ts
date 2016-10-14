@@ -8,37 +8,31 @@ import { Router } from '@angular/router';
 })
 export class SummaryComponent implements OnInit {
 
-    activeSummaryView: string;
+    activeSummaryView: string = '';
 
-    router: Router;
-
-    constructor(private _router: Router) {
-
-        this.router = _router;
-
-    }
+    constructor(private _router: Router) { }
 
     ngOnInit() {
 
-        const urlArray = this.router.url.split('/');
+        let urlArray = this._router.url.split('/');
 
         this.activeSummaryView = urlArray[urlArray.length - 1];
 
     }
 
-    loadOrResetSummaryView(path: string) {
+    loadOrResetSummaryView(path: string): void {
 
         if (this.activeSummaryView === path) {
 
             this.activeSummaryView = '';
 
-            this.router.navigate(['dashboard']);
+            this._router.navigate(['dashboard']);
 
         } else {
 
             this.activeSummaryView = path;
 
-            this.router.navigate(['dashboard', path]);
+            this._router.navigate(['dashboard', path]);
 
         }
 

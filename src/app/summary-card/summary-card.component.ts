@@ -17,7 +17,6 @@ export class SummaryCardComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit() {
-    }
+    ngOnInit() { }
 
 }

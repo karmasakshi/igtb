@@ -14,6 +14,7 @@
 	<!-- Right -->
 	<div class="column col-8 col-xs-10 text-right">
 
+		<!-- Logged In -->
 		<section *ngIf="_auth0Service.authenticated()">
 
 			<!-- Search -->
@@ -33,10 +34,14 @@
 
 		</section>
 
+		<!-- Logged Out -->
 		<section *ngIf="!_auth0Service.authenticated()">
 
 			<!-- User -->
-			<i class="ml-5 material-icons clickable vm" (click)="_auth0Service.login()">person</i>
+			<div class="clickable inline-block" (click)="_auth0Service.login()">
+				<i class="ml-5 material-icons vm">person</i>
+				<span>Login / Register</span>
+			</div>
 
 		</section>
 
