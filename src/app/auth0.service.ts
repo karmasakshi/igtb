@@ -8,7 +8,11 @@ declare var Auth0Lock: any;
 @Injectable()
 export class Auth0Service {
 
-    lock = new Auth0Lock('L69pxwQKiyJWxNAbASDjyzz0UJuwS5gP', 'rdc.eu.auth0.com');
+    lock = new Auth0Lock('L69pxwQKiyJWxNAbASDjyzz0UJuwS5gP', 'rdc.eu.auth0.com', {
+
+        allowedConnections: ['Username-Password-Authentication']
+
+    });
 
     constructor(private _router: Router) {
 
