@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 
 import { Auth0Service } from './auth0.service';
 
@@ -8,9 +8,9 @@ export class GuardService implements CanActivate {
 
     constructor(private _auth0Service: Auth0Service, private _router: Router) { }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    canActivate(): boolean {
 
-        if (this._auth0Service.authenticated()) {
+        if (this._auth0Service.isAuthenticated()) {
 
             return true;
 

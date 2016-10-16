@@ -4,7 +4,7 @@
 	<div class="column col-4 col-xs-2">
 
 		<!-- Menu -->
-		<i class="material-icons clickable vm mr-5" *ngIf="_auth0Service.authenticated()">menu</i>
+		<i class="material-icons clickable vm mr-5" *ngIf="_auth0Service.isAuthenticated()">menu</i>
 
 		<!-- Logo -->
 		<img class="hide-xs clickable vm" alt="Logo" routerLink="/dashboard" src="assets/logo.png" style="height: 20px;" />
@@ -15,7 +15,7 @@
 	<div class="column col-8 col-xs-10 text-right">
 
 		<!-- Logged In -->
-		<section *ngIf="_auth0Service.authenticated()">
+		<section *ngIf="_auth0Service.isAuthenticated()">
 
 			<!-- Search -->
 			<i class="material-icons clickable vm">search</i>
@@ -35,7 +35,7 @@
 		</section>
 
 		<!-- Logged Out -->
-		<section *ngIf="!_auth0Service.authenticated()">
+		<section *ngIf="!_auth0Service.isAuthenticated()">
 
 			<!-- User -->
 			<div class="clickable inline-block" (click)="_auth0Service.login()">
