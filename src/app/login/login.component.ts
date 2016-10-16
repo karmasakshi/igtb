@@ -18,6 +18,10 @@ export class LoginComponent implements OnInit {
 
             this._router.navigate(['dashboard']);
 
+        } else {
+
+            this._auth0Service.login();
+
         }
 
     }
