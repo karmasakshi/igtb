@@ -1,22 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { SummaryService } from '../summary.service';
+
 @Component({
     selector: 'app-summary',
     templateUrl: './summary.component.html',
-    styleUrls: ['./summary.component.css']
+    styleUrls: ['./summary.component.css'],
+    providers: [SummaryService]
 })
 export class SummaryComponent implements OnInit {
 
-    activeSummaryView: string = '';
+    activeSummaryView = '';
 
-    constructor(private _router: Router) { }
+    summary;
+
+    constructor(private _router: Router, private _summaryService: SummaryService) { }
 
     ngOnInit() {
 
         let urlArray = this._router.url.split('/');
 
         this.activeSummaryView = urlArray[urlArray.length - 1];
+
+        this._summaryService.getSummary().subscribe(
+            summary => this.summary = summary,
+            // error => console.log(error),
+            // () => // Disable loading animation
+        );
 
     }
 
@@ -36,41 +47,6 @@ export class SummaryComponent implements OnInit {
 
         }
 
-    };
-
-    summary = {
-        accounts: {
-            amount: {
-                currencySymbol: '$',
-                figure: '6,000,000',
-                change: '00'
-            },
-            additionalText: 'Additional information goes here.'
-        },
-        incomes: {
-            amount: {
-                currencySymbol: '$',
-                figure: '8,200,000',
-                change: '00'
-            },
-            additionalText: 'Additional information goes here.'
-        },
-        spendings: {
-            amount: {
-                currencySymbol: '$',
-                figure: '4,000,000',
-                change: '00'
-            },
-            additionalText: 'Additional information goes here.'
-        },
-        cashflow: {
-            amount: {
-                currencySymbol: '$',
-                figure: '4,200,000',
-                change: '00'
-            },
-            additionalText: 'Additional information goes here.'
-        }
     };
 
 }

@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SummaryCardComponent implements OnInit {
 
     @Input() additionalText: string;
-    @Input() amount: string;
+    @Input() amount;
     @Input() clickable: string;
     @Input() colorCode: string;
     @Input() icon: string;
