@@ -11,7 +11,7 @@ import { SummaryService } from '../summary.service';
 })
 export class SummaryComponent implements OnInit {
 
-    activeSummaryView = '';
+    activeSummaryView: string = '';
 
     summary;
 
