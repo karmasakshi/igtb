@@ -69,5 +69,18 @@
 	</div>
 </div>
 
+<div class="container bb" *ngIf="!summary">
+
+    <div class="empty mb-10" *ngIf="!isSummaryError">
+        <div class="loading"></div>
+    </div>
+
+    <div class="empty mb-10" *ngIf="isSummaryError">
+        <i class="material-icons clickable vm">warning</i>
+        <span>Could not load data. <a class="clickable" (click)="getSummary()">Retry</a>.</span>
+    </div>
+
+</div>
+
 <!-- Child View -->
 <router-outlet></router-outlet>

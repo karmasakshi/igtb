@@ -12,8 +12,8 @@ import { SummaryService } from '../summary.service';
 export class SummaryComponent implements OnInit {
 
     activeSummaryView: string = '';
-
     summary;
+    isSummaryError: boolean = false;
 
     constructor(private _router: Router, private _summaryService: SummaryService) { }
 
@@ -23,10 +23,18 @@ export class SummaryComponent implements OnInit {
 
         this.activeSummaryView = urlArray[urlArray.length - 1];
 
+        this.getSummary();
+
+    }
+
+    getSummary() {
+
+        this.isSummaryError = false;
+
         this._summaryService.getSummary().subscribe(
             summary => this.summary = summary,
-            // error => console.log(error),
-            // () => // Disable loading animation
+            error => this.isSummaryError = true,
+            () => { }
         );
 
     }
