@@ -1,8 +1,13 @@
+/* --- IMPORTS --- */
+
+// Angular
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+// Services
 import { SummaryService } from '../summary.service';
 
+/* --- CLASS --- */
 @Component({
     selector: 'app-summary',
     templateUrl: './summary.component.html',
@@ -11,13 +16,18 @@ import { SummaryService } from '../summary.service';
 })
 export class SummaryComponent implements OnInit {
 
-    activeSummaryView: string = '';
-    summary;
-    isSummaryError: boolean = false;
+    // Declarations
+    private activeSummaryView: string;
+    private summary: any;
+    private isSummaryError: boolean;
 
     constructor(private _router: Router, private _summaryService: SummaryService) { }
 
     ngOnInit() {
+
+        this.activeSummaryView = null;
+        this.summary = null;
+        this.isSummaryError = false;
 
         let urlArray = this._router.url.split('/');
 
@@ -32,9 +42,13 @@ export class SummaryComponent implements OnInit {
         this.isSummaryError = false;
 
         this._summaryService.getSummary().subscribe(
+
             summary => this.summary = summary,
+
             error => this.isSummaryError = true,
+
             () => { }
+
         );
 
     }
