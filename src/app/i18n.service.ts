@@ -19,7 +19,7 @@ export class I18nService {
 
     public setLocale(locale): void {
 
-        this.translateService.use('gg');
+        this.translateService.use(locale);
 
     }
 
