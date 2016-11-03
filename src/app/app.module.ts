@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { Http, HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { TranslateLoader, TranslateModule,TranslateStaticLoader } from 'ng2-translate';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,6 +22,7 @@ import { NotificationCardComponent } from './notification-card/notification-card
 
 import { Auth0Service } from './auth0.service';
 import { GuardService } from './guard.service';
+import { I18nService } from './i18n.service';
 
 @NgModule({
     declarations: [
@@ -67,9 +69,14 @@ import { GuardService } from './guard.service';
             },
             { path: 'login', component: LoginComponent },
             { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
-        ])
+        ]),
+        TranslateModule.forRoot({
+            provide: TranslateLoader,
+            useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+            deps: [Http]
+        })
     ],
-    providers: [AUTH_PROVIDERS, Auth0Service, GuardService],
+    providers: [AUTH_PROVIDERS, Auth0Service, GuardService, I18nService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
