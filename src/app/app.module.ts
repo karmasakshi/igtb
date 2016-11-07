@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { TranslateLoader, TranslateModule, TranslateStaticLoader } from 'ng2-translate';
 
 import { ENV } from './constants';
@@ -26,6 +27,11 @@ import { Auth0Service } from './auth0.service';
 import { GuardService } from './guard.service';
 import { I18nService } from './i18n.service';
 import { NotificationService } from './notification.service';
+import { EPChartComponent } from './e-p-chart/e-p-chart.component';
+import { BCChartComponent } from './b-c-chart/b-c-chart.component';
+import { AsoChartComponent } from './aso-chart/aso-chart.component';
+import { DsoChartComponent } from './dso-chart/dso-chart.component';
+import { LrChartComponent } from './lr-chart/lr-chart.component';
 
 let i18nPath = ENV === 'DEV' ? '/assets/i18n' : '/igtb/assets/i18n';
 
@@ -42,10 +48,16 @@ let i18nPath = ENV === 'DEV' ? '/assets/i18n' : '/igtb/assets/i18n';
         SummaryIncomesComponent,
         SummaryCardComponent,
         NotificationComponent,
-        NotificationCardComponent
+        NotificationCardComponent,
+        EPChartComponent,
+        BCChartComponent,
+        AsoChartComponent,
+        DsoChartComponent,
+        LrChartComponent
     ],
     imports: [
         BrowserModule,
+        ChartsModule,
         FormsModule,
         HttpModule,
         RouterModule.forRoot([

@@ -1,59 +1,65 @@
 <div class="container">
-	<div class="columns">
+    <div class="columns">
 
-		<!-- Cashflow and Balances Chart -->
-		<div class="column col-md-12 text-center bb">
-			<div class="btn-group">
-				<button class="btn btn-sm btn-primary">CASHFLOW</button>
-				<button class="btn btn-sm btn-default">BALANCES</button>
-			</div>
-			<p class="lead" style="font-size: 5rem; font-weight: 100; margin: 100px 0;">{{ 'chartsPlaceholder' | translate }}</p>
-		</div>
+        <!-- Cashflow and Balances Chart -->
+        <div class="column col-md-12 text-center bb">
 
-		<!-- Payments and Expenses Chart -->
-		<div class="column col-md-12 text-center bb">
-			<div class="btn-group">
-				<button class="btn btn-sm btn-primary">PAYMENTS</button>
-				<button class="btn btn-sm btn-default">EXPENSES</button>
-			</div>
-			<p class="lead" style="font-size: 5rem; font-weight: 100; margin: 100px 0;">{{ 'chartsPlaceholder' | translate }}</p>
-		</div>
+            <div class="btn-group">
+                <button class="btn btn-sm btn-primary">CASHFLOW</button>
+                <button class="btn btn-sm btn-default">BALANCES</button>
+            </div>
 
-	</div>
+            <app-b-c-chart></app-b-c-chart>
+
+        </div>
+
+        <!-- Payments and Expenses Chart -->
+        <div class="column col-md-12 text-center bb">
+
+            <div class="btn-group">
+                <button class="btn btn-sm btn-primary">PAYMENTS</button>
+                <button class="btn btn-sm btn-default">EXPENSES</button>
+            </div>
+
+            <app-e-p-chart></app-e-p-chart>
+
+        </div>
+
+    </div>
 </div>
 
 <div class="container">
-	<div class="columns">
+    <div class="columns">
 
-		<!-- Liquidity Ratios Chart -->
-		<div class="column col-md-12 text-center bb">
-			<span class="lead">Liquidity Ratios</span>
-			<p class="lead" style="font-size: 5rem; font-weight: 100; margin: 100px 0;">{{ 'chartsPlaceholder' | translate }}</p>
-		</div>
+        <!-- Liquidity Ratios Chart -->
+        <div class="column col-md-12 text-center bb">
+            <span class="lead block">Liquidity Ratios</span>
+            <app-lr-chart></app-lr-chart>
+        </div>
 
-		<!-- Cash Conversion Cycle Chart -->
-		<div class="column col-md-12 text-center bb">
-			<span class="lead">Cash Conversion Cycle</span>
-			<p class="lead" style="font-size: 5rem; font-weight: 100; margin: 100px 0;">{{ 'chartsPlaceholder' | translate }}</p>
-		</div>
+        <!-- Cash Conversion Cycle Chart -->
+        <div class="column col-md-12 text-center bb">
+            <span class="lead block">Cash Conversion Cycle</span>
+            <app-lr-chart></app-lr-chart>
+        </div>
 
-	</div>
+    </div>
 </div>
 
 <div class="container">
-	<div class="columns">
+    <div class="columns">
 
-		<!-- Daily Sales Outstanding Chart -->
-		<div class="column col-md-12 text-center bb">
-			<span class="lead">Day's Sales Outstanding</span>
-			<p class="lead" style="font-size: 5rem; font-weight: 100; margin: 100px 0;">{{ 'chartsPlaceholder' | translate }}</p>
-		</div>
+        <!-- Daily Sales Outstanding Chart -->
+        <div class="column col-md-12 text-center bb">
+            <span class="lead block mb-10">Day's Sales Outstanding</span>
+            <app-dso-chart></app-dso-chart>
+        </div>
 
-		<!-- Average Days Sales Outstanding Chart -->
-		<div class="column col-md-12 text-center bb">
-			<span class="lead">Average Day's Sales Outstanding</span>
-			<p class="lead" style="font-size: 5rem; font-weight: 100; margin: 100px 0;">{{ 'chartsPlaceholder' | translate }}</p>
-		</div>
+        <!-- Average Days Sales Outstanding Chart -->
+        <div class="column col-md-12 text-center bb">
+            <span class="lead block mb-10">Average Day's Sales Outstanding</span>
+            <app-aso-chart></app-aso-chart>
+        </div>
 
-	</div>
+    </div>
 </div>
