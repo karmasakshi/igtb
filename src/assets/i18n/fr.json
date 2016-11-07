@@ -1,3 +1,10 @@
 {
-    "chartsPlaceholder": "Graphiques"
+    "activity": "Activité",
+    "dashboardTitle": "Tableau de Bord",
+    "thinkText": "Je veux...",
+    "chartsPlaceholder": "Graphiques",
+    "today": "Aujourd'hui",
+    "filter": "Filtre",
+    "currentMonth": "Mois en Cours",
+    "summary": "Résumé"
 }

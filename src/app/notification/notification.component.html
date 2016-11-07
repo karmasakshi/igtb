@@ -3,17 +3,17 @@
 	<div class="columns">
 
 		<!-- Activity -->
-		<div class="column col-4 text-center clickable tooltip tooltip-bottom" data-tooltip="Activity">
+		<div class="column col-4 text-center clickable tooltip tooltip-bottom" [attr.data-tooltip]="'activity' | translate">
 			<i class="material-icons vm">rss_feed</i>
 		</div>
 
 		<!-- Today -->
-		<div class="column col-4 text-center clickable tooltip tooltip-bottom" data-tooltip="Today">
+		<div class="column col-4 text-center clickable tooltip tooltip-bottom" [attr.data-tooltip]="'today' | translate">
 			<i class="material-icons vm">date_range</i>
 		</div>
 
 		<!-- Filter -->
-		<div class="column col-4 text-center clickable tooltip tooltip-bottom" data-tooltip="Filter">
+		<div class="column col-4 text-center clickable tooltip tooltip-bottom" [attr.data-tooltip]="'filter' | translate">
 			<i class="material-icons vm">filter_list</i>
 		</div>
 

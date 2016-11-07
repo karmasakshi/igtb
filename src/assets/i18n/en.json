@@ -1,3 +1,10 @@
 {
-    "chartsPlaceholder": "Charts"
+    "activity": "Activity",
+    "dashboardTitle": "Dashboard",
+    "thinkText": "I want to...",
+    "chartsPlaceholder": "Charts",
+    "today": "Today",
+    "filter": "Filter",
+    "currentMonth": "Current Month",
+    "summary": "Summary"
 }
