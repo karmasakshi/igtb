@@ -32,6 +32,7 @@ import { BCChartComponent } from './b-c-chart/b-c-chart.component';
 import { AsoChartComponent } from './aso-chart/aso-chart.component';
 import { DsoChartComponent } from './dso-chart/dso-chart.component';
 import { LrChartComponent } from './lr-chart/lr-chart.component';
+import { CccChartComponent } from './ccc-chart/ccc-chart.component';
 
 let i18nPath = ENV === 'DEV' ? '/assets/i18n' : '/igtb/assets/i18n';
 
@@ -53,7 +54,8 @@ let i18nPath = ENV === 'DEV' ? '/assets/i18n' : '/igtb/assets/i18n';
         BCChartComponent,
         AsoChartComponent,
         DsoChartComponent,
-        LrChartComponent
+        LrChartComponent,
+        CccChartComponent
     ],
     imports: [
         BrowserModule,

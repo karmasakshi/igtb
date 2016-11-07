@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LrChartComponent implements OnInit {
 
-    public radarChartLabels: string[] = ['Quick', 'Current', 'Some', 'Designing', 'Coding', 'Cycling', 'Running'];
+    public radarChartLabels: string[] = ['Quick', 'Current', 'Some', 'Designing'];
 
     public radarChartData: any = [
-        { data: [65, 59, 90, 81, 56, 55, 40], label: 'Series A' },
-        { data: [28, 48, 40, 19, 96, 27, 100], label: 'Series B' }
+        { data: [65, 59, 90, 81], label: 'Series A' },
+        { data: [28, 48, 40, 19], label: 'Series B' }
     ];
     public radarChartType: string = 'radar';
 
