@@ -5,7 +5,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AUTH_PROVIDERS } from 'angular2-jwt';
-import { TranslateLoader, TranslateModule,TranslateStaticLoader } from 'ng2-translate';
+import { TranslateLoader, TranslateModule, TranslateStaticLoader } from 'ng2-translate';
+
+import { ENV } from './constants';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -23,6 +25,8 @@ import { NotificationCardComponent } from './notification-card/notification-card
 import { Auth0Service } from './auth0.service';
 import { GuardService } from './guard.service';
 import { I18nService } from './i18n.service';
+
+let i18nPath = ENV === 'DEV' ? '/assets/i18n' : '/igtb/assets/i18n';
 
 @NgModule({
     declarations: [
@@ -72,7 +76,7 @@ import { I18nService } from './i18n.service';
         ]),
         TranslateModule.forRoot({
             provide: TranslateLoader,
-            useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+            useFactory: (http: Http) => new TranslateStaticLoader(http, i18nPath, '.json'),
             deps: [Http]
         })
     ],

@@ -1,58 +1,61 @@
 <nav class="columns bb">
 
-	<!-- Left -->
-	<div class="column col-4 col-xs-2">
+    <!-- Left -->
+    <div class="column col-4 col-xs-2">
 
-		<!-- Menu -->
-		<i class="material-icons clickable vm mr-5" *ngIf="auth0Service.isAuthenticated()">menu</i>
+        <!-- Menu -->
+        <i class="material-icons clickable vm mr-5" *ngIf="auth0Service.isAuthenticated()">menu</i>
 
-		<!-- Logo -->
-		<img class="hide-xs clickable vm" alt="Logo" routerLink="/dashboard" src="assets/logo.png" style="height: 20px;" />
+        <!-- Logo -->
+        <img class="hide-xs clickable vm" alt="Logo" routerLink="/dashboard" src="assets/logo.png" style="height: 20px;" />
 
-	</div>
+    </div>
 
-	<!-- Right -->
-	<div class="column col-8 col-xs-10 text-right">
+    <!-- Right -->
+    <div class="column col-8 col-xs-10 text-right">
 
-		<i class="material-icons vm">language</i>
+        <!-- Common -->
+        <section class="inline-block" *ngIf="auth0Service.isAuthenticated()">
 
-        <select [(ngModel)]="activeLocale" (change)="setLocale($event.target.value)">
+            <!-- Language Selector -->
+            <i class="material-icons vm">language</i>
+            <select [(ngModel)]="activeLocale" (change)="setLocale($event.target.value)">
+                <option *ngFor="let locale of locales" [value]="locale.value">{{locale.name}}</option>
+            </select>
 
-            <option *ngFor="let locale of locales" [value]="locale.value">{{locale.name}}</option>
+        </section>
 
-        </select>
+        <!-- Logged In -->
+        <section class="inline-block" *ngIf="auth0Service.isAuthenticated()">
 
-		<!-- Logged In -->
-		<section class="inline-block" *ngIf="auth0Service.isAuthenticated()">
+            <!-- Search -->
+            <i class="ml-5 material-icons clickable vm">search</i>
 
-			<!-- Search -->
-			<i class="material-icons clickable vm">search</i>
+            <!-- Cart -->
+            <span class="badge" data-badge="99"><i class="ml-5 material-icons clickable vm">shopping_cart</i></span>
 
-			<!-- Cart -->
-			<span class="badge" data-badge="99"><i class="ml-5 material-icons clickable vm">shopping_cart</i></span>
+            <!-- Mail -->
+            <span class="badge" data-badge="99"><i class="ml-5 material-icons clickable vm">mail_outline</i></span>
 
-			<!-- Mail -->
-			<span class="badge" data-badge="99"><i class="ml-5 material-icons clickable vm">mail_outline</i></span>
+            <!-- User -->
+            <i class="ml-5 material-icons clickable vm" (click)="auth0Service.logout()">person</i>
 
-			<!-- User -->
-			<i class="ml-5 material-icons clickable vm" (click)="auth0Service.logout()">person</i>
+            <!-- Exit -->
+            <i class="ml-5 material-icons clickable vm">exit_to_app</i>
 
-			<!-- Exit -->
-			<i class="ml-5 material-icons clickable vm">exit_to_app</i>
+        </section>
 
-		</section>
+        <!-- Logged Out -->
+        <section class="inline-block" *ngIf="!auth0Service.isAuthenticated()">
 
-		<!-- Logged Out -->
-		<section class="inline-block" *ngIf="!auth0Service.isAuthenticated()">
+            <!-- User -->
+            <div class="clickable inline-block" (click)="auth0Service.login()">
+                <i class="ml-5 material-icons vm">person</i>
+                <span>Login / Register</span>
+            </div>
 
-			<!-- User -->
-			<div class="clickable inline-block" (click)="auth0Service.login()">
-				<i class="ml-5 material-icons vm">person</i>
-				<span>Login / Register</span>
-			</div>
+        </section>
 
-		</section>
-
-	</div>
+    </div>
 
 </nav>
