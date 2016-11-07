@@ -9,7 +9,8 @@ declare var Auth0Lock: any;
 export class Auth0Service {
 
     private options = {
-        auth: { redirect: false }
+        auth: { redirect: false },
+        autoclose: true
     };
 
     lock = new Auth0Lock('L69pxwQKiyJWxNAbASDjyzz0UJuwS5gP', 'rdc.eu.auth0.com', this.options);
