@@ -24,8 +24,12 @@
 	<div class="columns">
 
 		<!-- Notification Cards -->
-		<div class="column col-12 pb-0" *ngFor="let item of [1, 2, 3, 4, 5, 6]">
-			<app-notification-card></app-notification-card>
+		<div class="column col-12 pb-0" *ngFor="let notification of notifications">
+			<app-notification-card
+                [title]="notification.title"
+                [time]="notification.time"
+                [statements]="notification.statements">
+            </app-notification-card>
 		</div>
 
 	</div>

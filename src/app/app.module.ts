@@ -25,6 +25,7 @@ import { NotificationCardComponent } from './notification-card/notification-card
 import { Auth0Service } from './auth0.service';
 import { GuardService } from './guard.service';
 import { I18nService } from './i18n.service';
+import { NotificationService } from './notification.service';
 
 let i18nPath = ENV === 'DEV' ? '/assets/i18n' : '/igtb/assets/i18n';
 
@@ -80,7 +81,7 @@ let i18nPath = ENV === 'DEV' ? '/assets/i18n' : '/igtb/assets/i18n';
             deps: [Http]
         })
     ],
-    providers: [AUTH_PROVIDERS, Auth0Service, GuardService, I18nService],
+    providers: [AUTH_PROVIDERS, Auth0Service, GuardService, I18nService, NotificationService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

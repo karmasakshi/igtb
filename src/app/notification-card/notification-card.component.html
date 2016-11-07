@@ -1,15 +1,15 @@
 <div class="notification-card">
 
-	<!-- Header -->
-	<header>
-		<i class="material-icons vm" style="font-size: 18px;">star</i>
-		<strong class="vm">Notification</strong>
-		<small class="float-right">5 mins ago</small>
-	</header>
+    <!-- Header -->
+    <header>
+        <i class="material-icons vm" style="font-size: 18px;">star</i>
+        <strong class="vm">{{ title }}</strong>
+        <small class="float-right">{{ time }}</small>
+    </header>
 
-	<!-- Body -->
-	<div class="pl-10">
-		<small>Notification content. Push some data to this app to make it appear here.</small>
-	</div>
+    <!-- Body -->
+    <div class="pl-10">
+        <small *ngFor="let statement of statements">{{ statement }}<br/></small>
+    </div>
 
 </div>
