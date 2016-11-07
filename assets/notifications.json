@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Transactions",
+        "statements": [
+            "Incomes: $200,035.00",
+            "Expenses: $63,500.00"
+        ],
+        "time": "3 min ago"
+    },
+    {
+        "title": "Recommender",
+        "statements": [
+            "You will have a deficit of $12,622 on Account *** 2237 in 4 days."
+        ],
+        "time": "15 min ago"
+    },
+    {
+        "title": "Cashflow",
+        "statements": [
+            "Your highest balance this month was $6,785,010 (5 Nov.)",
+            "Your lowest balance this month was $5,304,500 (2 Nov.)"
+        ],
+        "time": "30 min ago"
+    },
+    {
+        "title": "Recommender",
+        "statements": [
+            "You have 6 invoices worth 28,944.22 SGD that needs to be paid in the next 3 months, and you don't hold any SGD."
+        ],
+        "time": "35 min ago"
+    }
+]
