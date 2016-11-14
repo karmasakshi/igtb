@@ -13,6 +13,7 @@ export class SummaryCardComponent implements OnInit {
     @Input() colorCode: string;
     @Input() icon: string;
     @Input() isActive: boolean = false;
+    @Input() loaded: string = 'true';
     @Input() title: string;
 
     constructor() { }

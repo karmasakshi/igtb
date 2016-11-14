@@ -71,8 +71,21 @@
 
 <div class="container bb" *ngIf="!summary">
 
-    <div class="empty mb-10" *ngIf="!isSummaryError">
-        <div class="loading"></div>
+    <div class="columns">
+
+		<div class="column col-md-6 pt-0">
+			<app-summary-card [loaded]="'false'"></app-summary-card>
+        </div>
+        <div class="column col-md-6 pt-0">
+			<app-summary-card [loaded]="'false'"></app-summary-card>
+        </div>
+        <div class="column col-md-6 pt-0">
+			<app-summary-card [loaded]="'false'"></app-summary-card>
+        </div>
+        <div class="column col-md-6 pt-0">
+			<app-summary-card [loaded]="'false'"></app-summary-card>
+        </div>
+
     </div>
 
     <div class="empty mb-10" *ngIf="isSummaryError">

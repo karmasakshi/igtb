@@ -1,20 +1,38 @@
 <div class="summary-card" [style.border-color]="colorCode" [style.color]="isActive ? '#fff' : colorCode" [style.background-color]="isActive ? colorCode : white" [ngClass]="{'clickable': clickable === 'true'}">
 
-	<!-- Title -->
-	<div>
-		<span class="lead">{{title}}</span>
-		<i *ngIf="!isActive" class="float-right material-icons">{{icon}}</i>
-		<i *ngIf="isActive" class="float-right material-icons">close</i>
-	</div>
+    <section *ngIf="loaded === 'true'">
+        <!-- Title -->
+        <div>
+            <span class="lead">{{title}}</span>
+            <i *ngIf="!isActive" class="float-right material-icons">{{icon}}</i>
+            <i *ngIf="isActive" class="float-right material-icons">close</i>
+        </div>
 
-	<!-- Amount -->
-	<div class="text-ellipsis mt-10">
-		<span>{{amount.currencySymbol}}</span><small> </small><span class="amount">{{amount.figure}}</span><small> </small><span>.{{amount.change}}</span>
-	</div>
+        <!-- Amount -->
+        <div class="text-ellipsis mt-10">
+            <span>{{amount.currencySymbol}}</span><small> </small><span class="amount">{{amount.figure}}</span><small> </small><span>.{{amount.change}}</span>
+        </div>
 
-	<!-- Additional Text -->
-	<div class="text-ellipsis">
-		<small>{{additionalText}}</small>
-	</div>
+        <!-- Additional Text -->
+        <div class="text-ellipsis">
+            <small>{{additionalText}}</small>
+        </div>
+    </section>
+
+    <section *ngIf="loaded === 'false'">
+
+        <div class="animated-bg">
+
+                <div style="opacity: 0; height: 10px;"></div>
+                <div style="background-color: white; height: 10px;"></div>
+                <div style="opacity: 0; height: 10px;"></div>
+                <div style="background-color: white; height: 10px;"></div>
+                <div style="opacity: 0; height: 10px;"></div>
+                <div style="background-color: white; height: 10px;"></div>
+                <div style="opacity: 0; height: 10px;"></div>
+
+        </div>
+
+    </section>
 
 </div>
