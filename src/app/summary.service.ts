@@ -5,6 +5,8 @@ import { AuthHttp } from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/timeout';
 
+import { ENDPOINTS, TIMEOUT } from './constants';
+
 @Injectable()
 export class SummaryService {
 
@@ -12,9 +14,9 @@ export class SummaryService {
 
     getSummary() {
 
-        return this._authHttp.get('https://robin-daniel-consultants.cloud.tyk.io/accounts/summary')
+        return this._authHttp.get(ENDPOINTS.GET_SUMMARY)
 
-            .timeout(3000, new Error('Timeout.'))
+            .timeout(TIMEOUT, new Error('Timeout.'))
 
             .map((res: Response) => res.json()[0])
 
