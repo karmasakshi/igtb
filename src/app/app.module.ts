@@ -19,7 +19,7 @@ import { SummaryDefaultComponent } from './summary-default/summary-default.compo
 import { SummaryAccountsComponent } from './summary-accounts/summary-accounts.component';
 import { SummarySpendingsComponent } from './summary-spendings/summary-spendings.component';
 import { SummaryIncomesComponent } from './summary-incomes/summary-incomes.component';
-import { SummaryCardComponent } from './summary-card/summary-card.component';
+import { SummaryCardComponent } from '@igtb/summary-card-component/summary-card.component';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationCardComponent } from './notification-card/notification-card.component';
 
