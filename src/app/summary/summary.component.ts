@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 // Services
-import { SummaryService } from '../summary.service';
+import { SummaryService } from '@igtb/summary-service/summary.service';
 
 /* --- CLASS --- */
 @Component({
