@@ -34,7 +34,17 @@ import { DsoChartComponent } from './dso-chart/dso-chart.component';
 import { LrChartComponent } from './lr-chart/lr-chart.component';
 import { CccChartComponent } from './ccc-chart/ccc-chart.component';
 
-let i18nPath = ENV === 'DEV' ? '/assets/i18n' : '/igtb/assets/i18n';
+import { ApolloModule } from 'angular2-apollo';
+import ApolloClient, { createNetworkInterface } from 'apollo-client';
+
+// Create the client as outlined above
+const client = new ApolloClient({
+    networkInterface: createNetworkInterface({
+        uri: 'http://localhost:8080/graphql'
+    })
+});
+
+let i18nPath = (ENV === 'DEV') ? '/assets/i18n' : '/igtb/assets/i18n';
 
 @NgModule({
     declarations: [
@@ -61,6 +71,7 @@ let i18nPath = ENV === 'DEV' ? '/assets/i18n' : '/igtb/assets/i18n';
         BrowserModule,
         ChartsModule,
         FormsModule,
+        ApolloModule.withClient(client),
         HttpModule,
         RouterModule.forRoot([
             {

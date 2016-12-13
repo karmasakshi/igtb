@@ -7,6 +7,25 @@ import { Router } from '@angular/router';
 // Services
 import { SummaryService } from '@igtb/summary-service/summary.service';
 
+import { Angular2Apollo } from 'angular2-apollo';
+import gql from 'graphql-tag';
+
+const CurrentUserForProfile = gql`
+  query myAccount {
+  currentAccount(account: {iban: "IE71NOSC364932100954743"}) {
+    name
+    iban
+    availableBalance
+    mailingAddress {
+      city
+      postalCode
+      address
+      countryCode
+    }
+  }
+}
+`;
+
 /* --- CLASS --- */
 @Component({
     selector: 'app-summary',
@@ -21,9 +40,16 @@ export class SummaryComponent implements OnInit {
     private summary: any;
     private isSummaryError: boolean;
 
-    constructor(private _router: Router, private _summaryService: SummaryService) { }
-
+    constructor(private _router: Router, private _summaryService: SummaryService, private apollo: Angular2Apollo) { }
+    private data;
     ngOnInit() {
+
+        this.apollo.watchQuery({
+            query: CurrentUserForProfile
+        }).subscribe(({data}) => {
+            this.data = data;
+            console.log(this.data);
+        });
 
         this.activeSummaryView = null;
         this.summary = null;
